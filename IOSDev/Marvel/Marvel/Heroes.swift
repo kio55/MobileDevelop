@@ -6,12 +6,11 @@
 //  Copyright © 2021 Kirill. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 struct Hero {
-    var name:String
-    var image:UIImage
+    let name: String
+    let image: UIImage
 }
 
 class Heroes {
@@ -20,14 +19,22 @@ class Heroes {
     init() {
         setup()
     }
-    
     func setup(){
-        let spider = Hero(name:"Spider man", image: UIImage(named: "spider")!)
-        let venom = Hero(name:"Venom", image:
-            UIImage(named:"venom")!)
-        let doctor = Hero(name:"Doctor strange", image: UIImage(named:"doctor")!)
-        let thanos = Hero(name:"Thanos", image: UIImage(named:"thanos")!)
-        self.heroes = [spider, venom, doctor, thanos]
+        if let spiderImage = UIImage(named: "spider") {
+            let spider = Hero(name:"Spider man", image: spiderImage)
+            self.heroes.append(spider)
+        }
+        if let venomImage = UIImage(named: "venom") {
+            let venom = Hero(name:"Venom", image: venomImage)
+            self.heroes.append(venom)
+        }
+        if let doctorImage = UIImage(named: "doctor") {
+            let doctor = Hero(name:"Doctor strange", image: doctorImage)
+            self.heroes.append(doctor)
+        }
+        if let thanosImage = UIImage(named: "thanos") {
+            let thanos = Hero(name:"Thanos", image: thanosImage)
+            self.heroes.append(thanos)
+        }
     }
 }
-

@@ -12,7 +12,6 @@ class HeroCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var heroImage: UIImageView!
     
-    
     @IBOutlet weak var heroName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
