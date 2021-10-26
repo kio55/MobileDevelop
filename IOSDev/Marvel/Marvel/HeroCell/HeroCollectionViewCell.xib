@@ -16,7 +16,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="300" height="669"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yuc-aI-DWf">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yuc-aI-DWf">
                         <rect key="frame" x="0.0" y="0.0" width="300" height="669"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="bottomLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgr-c6-G4f">
@@ -38,10 +38,6 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="300" height="669"/>
-            <connections>
-                <outlet property="heroImage" destination="yuc-aI-DWf" id="VKn-cQ-DBR"/>
-                <outlet property="heroName" destination="cgr-c6-G4f" id="eWF-Ya-PAr"/>
-            </connections>
             <point key="canvasLocation" x="131.8840579710145" y="134.26339285714286"/>
         </collectionViewCell>
     </objects>

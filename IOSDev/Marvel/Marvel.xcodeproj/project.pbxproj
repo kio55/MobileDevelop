@@ -16,7 +16,7 @@
 		ED265FA72722E5C9007BC744 /* PagingCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED265FA62722E5C9007BC744 /* PagingCollectionViewLayout.swift */; };
 		ED265FA927230052007BC744 /* Heroes.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED265FA827230052007BC744 /* Heroes.swift */; };
 		ED265FAF27230845007BC744 /* HeroCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED265FAD27230845007BC744 /* HeroCollectionViewCell.swift */; };
-		ED265FB027230845007BC744 /* HeroCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED265FAE27230845007BC744 /* HeroCollectionViewCell.xib */; };
+		ED2AF57C2727A14F0085C5AF /* HeroCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2AF57B2727A14F0085C5AF /* HeroCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,7 @@
 		ED265FA62722E5C9007BC744 /* PagingCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingCollectionViewLayout.swift; sourceTree = "<group>"; };
 		ED265FA827230052007BC744 /* Heroes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heroes.swift; sourceTree = "<group>"; };
 		ED265FAD27230845007BC744 /* HeroCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCollectionViewCell.swift; sourceTree = "<group>"; };
-		ED265FAE27230845007BC744 /* HeroCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroCollectionViewCell.xib; sourceTree = "<group>"; };
+		ED2AF57B2727A14F0085C5AF /* HeroCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +73,7 @@
 				ED23DDBC272174B90036E0B2 /* LaunchScreen.storyboard */,
 				ED23DDBF272174B90036E0B2 /* Info.plist */,
 				ED265FA827230052007BC744 /* Heroes.swift */,
+				ED2AF57B2727A14F0085C5AF /* HeroCollectionView.swift */,
 			);
 			path = Marvel;
 			sourceTree = "<group>";
@@ -82,7 +83,6 @@
 			children = (
 				ED265FA62722E5C9007BC744 /* PagingCollectionViewLayout.swift */,
 				ED265FAD27230845007BC744 /* HeroCollectionViewCell.swift */,
-				ED265FAE27230845007BC744 /* HeroCollectionViewCell.xib */,
 			);
 			path = HeroCell;
 			sourceTree = "<group>";
@@ -145,7 +145,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED265FB027230845007BC744 /* HeroCollectionViewCell.xib in Resources */,
 				ED23DDBE272174B90036E0B2 /* LaunchScreen.storyboard in Resources */,
 				ED23DDBB272174B90036E0B2 /* Assets.xcassets in Resources */,
 				ED23DDB9272174B80036E0B2 /* Main.storyboard in Resources */,
@@ -162,6 +161,7 @@
 				ED265FA72722E5C9007BC744 /* PagingCollectionViewLayout.swift in Sources */,
 				ED23DDB6272174B80036E0B2 /* ViewController.swift in Sources */,
 				ED23DDB2272174B80036E0B2 /* AppDelegate.swift in Sources */,
+				ED2AF57C2727A14F0085C5AF /* HeroCollectionView.swift in Sources */,
 				ED265FA927230052007BC744 /* Heroes.swift in Sources */,
 				ED265FAF27230845007BC744 /* HeroCollectionViewCell.swift in Sources */,
 				ED23DDB4272174B80036E0B2 /* SceneDelegate.swift in Sources */,
