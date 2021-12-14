@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:marvel_app/api/hero_repository.dart';
+import 'package:marvel_app/cubit/hero_cubit.dart';
 import 'package:marvel_app/widgets/hero_list.dart';
 import 'package:marvel_app/widgets/logo_widget.dart';
 import 'package:marvel_app/widgets/title_widget.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  final heroesRepository = HeroRepository();
+
+  HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,10 +17,13 @@ class HomePage extends StatelessWidget {
       backgroundColor: Colors.grey[600],
       body: Column(
         mainAxisSize: MainAxisSize.max,
-        children: const [
-          LogoWidget(),
-          TitleWidget(),
-          HeroList(),
+        children: [
+          const LogoWidget(),
+          const TitleWidget(),
+          BlocProvider<HeroCubit>(
+            create: (context) => HeroCubit(heroesRepository),
+            child: const HeroList(),
+          ),
         ],
       ),
     );

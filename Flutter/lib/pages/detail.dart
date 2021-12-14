@@ -26,16 +26,7 @@ class DetailPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Flexible(
-                child: Container(
-                  width: double.infinity,
-                  alignment: Alignment.topLeft,
-                  child: const ButtonWidget(),
-                ),
-                flex: 15,
-                fit: FlexFit.tight,
-              ),
-              Flexible(
-                flex: 1,
+                flex: 2,
                 child: Container(
                   padding: const EdgeInsets.only(left: 20),
                   width: double.infinity,
@@ -51,6 +42,7 @@ class DetailPage extends StatelessWidget {
                       decoration: TextDecoration.none,
                     ),
                     textAlign: TextAlign.start,
+                    textDirection: TextDirection.ltr,
                   ),
                 ),
               ),
@@ -73,12 +65,15 @@ class DetailPage extends StatelessWidget {
                     textAlign: TextAlign.left,
                   ),
                 ),
-                flex: 4,
+                flex: 1,
+                fit: FlexFit.loose,
               ),
             ],
           ),
         ),
       ),
+      floatingActionButton: const ButtonWidget(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
     );
   }
 }

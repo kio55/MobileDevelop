@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Marvel App',
       theme: ThemeData(primarySwatch: Colors.grey),
-      home: const HomePage(),
+      home: HomePage(),
     );
   }
 }
