@@ -16,7 +16,6 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey[600],
       body: Column(
-        mainAxisSize: MainAxisSize.max,
         children: [
           const LogoWidget(),
           const TitleWidget(),

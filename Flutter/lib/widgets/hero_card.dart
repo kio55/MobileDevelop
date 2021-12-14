@@ -1,4 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+
 import 'package:marvel_app/pages/detail.dart';
 
 import '../models/hero.dart' as hero_model;
@@ -19,23 +21,27 @@ class HeroCard extends StatelessWidget {
         tag: hero,
         child: Card(
           elevation: 5,
+          color: Colors.grey,
           clipBehavior: Clip.antiAlias,
           margin: const EdgeInsets.all(10),
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-          child: Container(
-              padding: const EdgeInsets.only(left: 10, bottom: 20),
-              width: 270,
-              height: 500,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: Image.network(
-                      hero.path,
-                    ).image,
-                    fit: BoxFit.cover),
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              CachedNetworkImage(
+                width: 370,
+                height: 500,
+                fit: BoxFit.cover,
+                alignment: Alignment.center,
+                imageUrl: hero.path,
+                placeholder: (context, url) =>
+                    const CircularProgressIndicator(),
+                errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
-              child: Align(
-                alignment: Alignment.bottomLeft,
+              Positioned(
+                bottom: 30,
+                left: 10,
                 child: Text(
                   hero.name,
                   overflow: TextOverflow.ellipsis,
@@ -47,7 +53,9 @@ class HeroCard extends StatelessWidget {
                       fontWeight: FontWeight.bold),
                   textAlign: TextAlign.start,
                 ),
-              )),
+              ),
+            ],
+          ),
         ),
       ),
     );
