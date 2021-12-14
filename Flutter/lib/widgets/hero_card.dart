@@ -46,7 +46,16 @@ class HeroCard extends StatelessWidget {
                   hero.name,
                   overflow: TextOverflow.ellipsis,
                   softWrap: true,
-                  style: const TextStyle(
+                  style: TextStyle(
+                      shadows: [
+                        Shadow(
+                            color: Colors.grey.shade500,
+                            offset: const Offset(-2, -2)),
+                        const Shadow(
+                            color: Colors.black,
+                            blurRadius: 8,
+                            offset: Offset(1, 1))
+                      ],
                       color: Colors.white,
                       fontFamily: "Montserrat",
                       fontSize: 25,

@@ -11,7 +11,6 @@ class LogoWidget extends StatelessWidget {
       margin: const EdgeInsets.only(top: 40),
       height: 50,
       width: double.infinity,
-      //width: double.infinity,
       decoration: BoxDecoration(
         image: DecorationImage(
             image: Image.asset(

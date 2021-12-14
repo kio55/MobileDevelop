@@ -43,20 +43,38 @@ class _HeroDescriptionList extends StatelessWidget {
       width: 400,
       height: 100,
       child: SingleChildScrollView(
-        child: Text(
-          hero.description,
-          softWrap: true,
-          style: const TextStyle(
-            color: Colors.white,
-            fontFamily: "Montserrat",
-            fontSize: 30,
-            fontWeight: FontWeight.bold,
-            decoration: TextDecoration.none,
-          ),
-          textAlign: TextAlign.start,
-          textDirection: TextDirection.ltr,
-        ),
+        child: _TextWidget(text: hero.description),
       ),
+    );
+  }
+}
+
+class _TextWidget extends StatelessWidget {
+  const _TextWidget({
+    Key? key,
+    required this.text,
+  }) : super(key: key);
+
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      softWrap: true,
+      style: TextStyle(
+        shadows: [
+          Shadow(color: Colors.grey.shade500, offset: const Offset(-2, -2)),
+          const Shadow(color: Colors.black, blurRadius: 8, offset: Offset(1, 1))
+        ],
+        color: Colors.white,
+        fontFamily: "Montserrat",
+        fontSize: 30,
+        fontWeight: FontWeight.bold,
+        decoration: TextDecoration.none,
+      ),
+      textAlign: TextAlign.start,
+      textDirection: TextDirection.ltr,
     );
   }
 }
@@ -76,20 +94,7 @@ class _HeroName extends StatelessWidget {
       left: 10,
       width: 400,
       height: 40,
-      child: Text(
-        hero.name,
-        overflow: TextOverflow.ellipsis,
-        softWrap: true,
-        style: const TextStyle(
-          color: Colors.white,
-          fontFamily: "Montserrat",
-          fontSize: 30,
-          fontWeight: FontWeight.bold,
-          decoration: TextDecoration.none,
-        ),
-        textAlign: TextAlign.start,
-        textDirection: TextDirection.ltr,
-      ),
+      child: _TextWidget(text: hero.name),
     );
   }
 }
