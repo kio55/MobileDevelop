@@ -5,15 +5,17 @@ import 'package:marvel_app/models/hero.dart';
 class HeroRepository {
   HeroProvider _heroesProvider = HeroProvider();
 
+  final heroesCount = 10;
+
   Future<List<Hero>> getAllHeroes() async {
     List<Hero> response;
-    if (!Hive.isAdapterRegistered(1)) {
+    if (!Hive.isAdapterRegistered(2)) {
       Hive.registerAdapter(HeroAdapter());
     }
-    final box = await Hive.openBox<Hero>('heroes_box');
+    final box = await Hive.openBox<Hero>('heroes_box-with_id');
 
     try {
-      response = await _heroesProvider.getFirstNHeroes(9);
+      response = await _heroesProvider.getFirstNHeroes(heroesCount);
       if (box.values.isNotEmpty) {
         box.deleteAll(box.keys);
       }

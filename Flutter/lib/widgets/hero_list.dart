@@ -1,6 +1,8 @@
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:marvel_app/cubit/hero_cubit.dart';
 import 'package:marvel_app/cubit/heroes_state.dart';
+import 'package:marvel_app/pages/detail.dart';
 import 'package:marvel_app/widgets/hero_card.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -16,6 +18,26 @@ class _HeroListState extends State<HeroList> {
     initialPage: 0,
     viewportFraction: 0.77,
   );
+
+  @override
+  void initState() {
+    super.initState();
+
+    FirebaseMessaging.instance.getInitialMessage();
+
+    FirebaseMessaging.onMessageOpenedApp.listen((event) async {
+      var heroes = await BlocProvider.of<HeroCubit>(context)
+          .heroesRepository
+          .getAllHeroes();
+      final int heroId = int.parse(event.data['heroId']);
+      var index = heroes.map((hero) => hero.id).toList().indexOf(heroId);
+
+      controller.jumpToPage(index);
+
+      Navigator.of(context).push(MaterialPageRoute(
+          builder: (BuildContext context) => DetailPage(hero: heroes[index])));
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
